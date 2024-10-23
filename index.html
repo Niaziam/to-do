@@ -1,73 +1,80 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Document</title>
 	<link rel="stylesheet" href="dist/output.css">
 </head>
+
 <body>
 	<!doctype html>
-<html>
+	<html>
 
-<head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<script src="https://cdn.tailwindcss.com"></script>
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-		integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
-		crossorigin="anonymous" referrerpolicy="no-referrer" />
-</head>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<script src="https://cdn.tailwindcss.com"></script>
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+			integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+			crossorigin="anonymous" referrerpolicy="no-referrer" />
+	</head>
 
-<body class="flex items-center justify-center bg-gradient-to-r from-green-400 via-teal-400 to-blue-500 h-screen">
+	<body class="flex items-center justify-center bg-gradient-to-r from-green-400 via-teal-400 to-blue-500 h-screen">
 
-	<div class="bg-white/60 rounded-3xl w-[40vw]">
-		<div class="bg-white/80 rounded-3xl p-8">
-			<h1 class="text-4xl font-extrabold text-center mb-6 tracking-wider">
-				<i class="fa-solid fa-list"></i> To-Do List
-			</h1>
+		<div class="bg-white/60 rounded-3xl w-[40vw]">
+			<div class="bg-white/80 rounded-3xl p-8">
+				<h1 class="text-4xl font-extrabold text-center mb-6 tracking-wider">
+					<i class="fa-solid fa-list"></i> To-Do List
+				</h1>
 
-			<!-- Input Section -->
-			<div class="gap-3 mb-5">
-				<input id="taskInput" type="text" placeholder="Enter a new task..."
-					class="w-full p-4 bg-white rounded-lg shadow-md outline-none focus:ring-4 focus:ring-teal-400 duration-200" />
-				<button id="addTaskButton"
-					class="bg-teal-600 hover:bg-teal-700 text-white p-3 rounded-lg shadow-lg hover:shadow-xl duration-200 hover:-translate-y-1 flex items-center justify-center gap-2 w-full mt-5">
-					<i class="fas fa-plus"></i> Add Task
-				</button>
-			</div>
-
-
-		</div>
-
-		<!-- To-Do List Section -->
-		<ul id="taskList" class="space-y-4 overflow-auto max-h-[50vh]">
-			<!-- Tasks will appear here dynamically -->
-
-			<!-- <li class="flex justify-between items-center bg-white p-4 rounded-lg shadow-md hover:bg-gray-100 m-8 duration-200">
-				<span class="flex-grow">Your Task Text Here</span>
-				<div class="flex gap-2">
-					<button
-						class="edit-btn bg-blue-500 hover:bg-blue-600 text-white px-3 py-2 rounded-lg transition-all">
-						<i class="fas fa-edit"></i> Edit
-					</button>
-					<button
-						class="delete-btn bg-red-500 hover:bg-red-600 text-white px-3 py-2 rounded-lg transition-all">
-						<i class="fas fa-trash"></i> Delete
+				<!-- Input Section -->
+				<div class="gap-3 mb-5">
+					<input id="input" type="text" placeholder="Enter a new task..."
+						class="w-full p-4 bg-white rounded-lg shadow-md outline-none focus:ring-4 focus:ring-teal-400 duration-200" />
+					<button id="addTask"
+						class="bg-teal-600 hover:bg-teal-700 text-white p-3 rounded-lg shadow-lg hover:shadow-xl duration-200 hover:-translate-y-1 flex items-center justify-center gap-2 w-full mt-5">
+						<i class="fas fa-plus"></i> Add Task
 					</button>
 				</div>
-			</li> -->
 
-		</ul>
-	</div>
+
+			</div>
+
+			<!-- To-Do List Section -->
+			<ul id="allList" class="space-y-4 overflow-auto max-h-[50vh]">
+				<!-- Tasks will appear here dynamically -->
+
+				<!-- <li
+					class="flex justify-between items-center bg-white p-4 rounded-lg shadow-md hover:bg-gray-100 m-8 duration-200">
+					<div class="w-full">
+						<span id="span" class="flex-grow text-lg font-semibold">Your Task Text Here</span>
+						<input id="" type="text" class="bg-white w-full h-10 text-lg font-semibold focus:ring-4 focus:ring-teal-400 duration-200 outline-none rounded-lg hidden">
+					</div>
+					<div class="flex gap-2 w-full justify-end">
+						<button
+							class="edit-btn bg-blue-500 hover:bg-blue-600 text-white px-3 py-2 rounded-lg transition-all w-20" id="editBtn">
+							<i id="save" class="fa-solid fa-edit"></i> Edit
+						</button>
+						<button
+							class="delete-btn bg-red-500 hover:bg-red-600 text-white px-3 py-2 rounded-lg transition-all">
+							<i  class="fa-solid fa-trash"></i> Delete
+						</button>
+					</div>
+				</li> -->
+
+			</ul>
+		</div>
+
+		<script src="script.js"></script>
+	</body>
+
+	</html>
+
+
 
 	<script src="script.js"></script>
 </body>
 
-</html>
-
-
-
-	<script src="script.js"></script>
-</body>
 </html>
