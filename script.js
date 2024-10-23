@@ -20,6 +20,7 @@ addBtn.addEventListener('click', () => {
 
 function createList(inputValue) {
 
+	// creating list
 	const li = document.createElement('li');
 	li.classList.add('flex', 'justify-between', 'items-center', 'bg-white', 'p-4', 'rounded-lg', 'shadow-md', 'm-5', 'hover:bg-gray-100', 'duration-200');
 
@@ -50,17 +51,18 @@ function createList(inputValue) {
 	li.append(firstDiv, lastDiv)
 	AllList.appendChild(li)
 
-
+	// delet button functionality
 	deletBtn.addEventListener('click', () => {
 		AllList.removeChild(li)
 	})
 
+	// edit button event
 	editBtn.addEventListener('click', () => {
 		editButton(p, firstDiv, lastDiv, editBtn)
 	})
 }
 
-
+// edit button functionality
 function editButton(inputValue, firstDiv, lastDiv, editBtn) {
 	const input = document.createElement("input");
 	input.type = 'text';
@@ -73,9 +75,13 @@ function editButton(inputValue, firstDiv, lastDiv, editBtn) {
 	<i class="fa-solid fa-save"></i> Save
 	`;
 
+	// replacing button and span tag
 	firstDiv.removeChild(inputValue)
 	firstDiv.appendChild(input)
 	lastDiv.replaceChild(SaveBtn, editBtn)
+
+
+	// save button functionality
 
 	SaveBtn.addEventListener('click', () => {
 		inputValue.innerText = input.value;
@@ -84,7 +90,6 @@ function editButton(inputValue, firstDiv, lastDiv, editBtn) {
 		firstDiv.appendChild(inputValue)
 		lastDiv.replaceChild(editBtn, SaveBtn)
 	})
-
 }
 
 
