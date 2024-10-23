@@ -26,9 +26,9 @@ function createList(inputValue){
 	const firstDiv = document.createElement("div");
 	firstDiv.classList.add('w-full');
 
-	const span = document.createElement("span");
-	span.classList.add('flex-grow', 'text-lg', 'font-semibold');
-	span.innerText = inputValue;
+	const p = document.createElement("p");
+	p.classList.add('flex-grow', 'text-lg', 'font-semibold', 'w-[300px]');
+	p.innerText = inputValue;
 
 	const lastDiv = document.createElement("div");
 	lastDiv.classList.add('flex', 'gap-2', 'w-full', 'justify-end', 'w-full');
@@ -45,11 +45,9 @@ function createList(inputValue){
 	<i class="fa-solid fa-trash"></i> Delete
 	`;
 
-	firstDiv.appendChild(span)
-	lastDiv.appendChild(editAndSaveBtn)
-	lastDiv.appendChild(deletBtn)
-	li.appendChild(firstDiv)
-	li.appendChild(lastDiv)
+	firstDiv.appendChild(p)
+	lastDiv.append(editAndSaveBtn, deletBtn)
+	li.append(firstDiv,lastDiv)
 	AllList.appendChild(li)
 
 }
