@@ -21,26 +21,35 @@ addBtn.addEventListener('click', () => {
 function createList(inputValue){
 
 	const li = document.createElement('li');
-	li.classList.add('flex', 'justify-between', 'items-center', 'bg-white', 'p-4', 'rounded-lg', 'shadow-md', 'hover:bg-gray-100', 'm-8', 'duration-200');
+	li.classList.add('flex', 'justify-between', 'items-center', 'bg-white', 'p-4', 'rounded-lg', 'shadow-md', 'm-5', 'hover:bg-gray-100', 'duration-200');
 
 	const firstDiv = document.createElement("div");
 	firstDiv.classList.add('w-full');
 
 	const span = document.createElement("span");
 	span.classList.add('flex-grow', 'text-lg', 'font-semibold');
+	span.innerText = inputValue;
 
 	const lastDiv = document.createElement("div");
-	lastDiv.classList.add('flex', 'gap-2', 'w-full', 'justify-end-full');
+	lastDiv.classList.add('flex', 'gap-2', 'w-full', 'justify-end', 'w-full');
 
 	const editAndSaveBtn = document.createElement("button");
-	editAndSaveBtn.classList.add('edit-btn', 'bg-blue-500', 'hover:bg-blue-600', 'text-white', 'px-3', 'rounded-lg', 'w-20');
+	editAndSaveBtn.classList.add('edit-btn', 'bg-blue-500', 'hover:bg-blue-600', 'text-white', 'px-3', 'py-2', 'rounded-lg', 'w-20');
+	editAndSaveBtn.innerHTML = `
+	<i id="save" class="fa-solid fa-edit"></i> Edit
+	`;
 
 	const deletBtn = document.createElement("button");
-	deletBtn.classList.add('delete-btn', 'bg-red-500', 'hover:bg-red-600', 'text-white', 'px-3', 'rounded-lg', 'w-20');
+	deletBtn.classList.add('delete-btn', 'bg-red-500', 'hover:bg-red-600', 'text-white', 'px-3','py-2', 'rounded-lg', 'w-26');
+	deletBtn.innerHTML = `
+	<i class="fa-solid fa-trash"></i> Delete
+	`;
 
 	firstDiv.appendChild(span)
-	lastDiv.appendChild(editAndSaveBtn, deletBtn)
-	li.appendChild(firstDiv, lastDiv)
+	lastDiv.appendChild(editAndSaveBtn)
+	lastDiv.appendChild(deletBtn)
+	li.appendChild(firstDiv)
+	li.appendChild(lastDiv)
 	AllList.appendChild(li)
 
 }
