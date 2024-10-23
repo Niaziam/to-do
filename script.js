@@ -50,4 +50,12 @@ function createList(inputValue){
 	li.append(firstDiv,lastDiv)
 	AllList.appendChild(li)
 
+
+	deletBtn.addEventListener('click', () => {
+		AllList.removeChild(li)
+	})
+
 }
+
+
+
