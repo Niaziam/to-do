@@ -6,8 +6,9 @@ const addBtn = document.getElementById("addTask");
 
 
 addBtn.addEventListener('click', () => {
-	if (input.value == '') {
+	if (input.value.trim() == '') {
 		alert('add your task')
+		input.value = "";
 	}
 	else {
 		createList(input.value.trim())
@@ -58,12 +59,12 @@ function createList(inputValue) {
 
 	// edit button event
 	editBtn.addEventListener('click', () => {
-		editButton(p, firstDiv, lastDiv, editBtn)
+		editButton(p, firstDiv, lastDiv, editBtn, li)
 	})
 }
 
 // edit button functionality
-function editButton(inputValue, firstDiv, lastDiv, editBtn) {
+function editButton(inputValue, firstDiv, lastDiv, editBtn, list) {
 	const input = document.createElement("input");
 	input.type = 'text';
 	input.classList.add('bg-white', 'w-full', 'h-10', 'text-lg', 'font-semibold', 'focus:ring-4', 'focus:ring-teal-400', 'duration-200', 'outline-none', 'rounded-lg', 'shadow-xl')
@@ -84,7 +85,13 @@ function editButton(inputValue, firstDiv, lastDiv, editBtn) {
 	// save button functionality
 
 	SaveBtn.addEventListener('click', () => {
-		inputValue.innerText = input.value;
+		if(input.value == ''){
+			alert("you can't make emty task");
+			AllList.removeChild(list);
+		}
+		else{
+			inputValue.innerText = input.value;
+		}
 
 		firstDiv.removeChild(input)
 		firstDiv.appendChild(inputValue)
